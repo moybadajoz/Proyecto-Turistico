@@ -5,6 +5,7 @@ body{
 .navbar{
     display: grid;
     grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     padding-top: 10px;
     width: 10%;
     height: 100%;
@@ -26,17 +27,22 @@ body{
 }
 
 .nav-btns{
-    grid-row: 12 / 13;
-    display: flex;
+    grid-row: 2 / 4;
+    display: grid;
     justify-content: center;
 }
 
-.nav-btns a{
-    
+.nav-login a, .nav-btns a{
     align-self: center;
     font-size: 30px;
     text-decoration: none;
     color: black;
+}
+
+.nav-login{
+    grid-row: 12 / 13;
+    display: flex;
+    justify-content: center;
 }
 
 .content{

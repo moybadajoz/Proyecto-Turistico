@@ -68,6 +68,12 @@ Este organismo no será competente para conocer de quejas que se originen con mo
         <img src="./img/logo-guanajuato.png" alt="">
     </div>
     <div class="nav-btns">
+        <a href="#">boton 1</a>
+        <a href="#">boton 2</a>
+        <a href="#">boton 3</a>
+        <a href="#">boton 4</a>
+    </div>
+    <div class="nav-login">
         <a href="/login.php">Login</a>
     </div>
 </div>
