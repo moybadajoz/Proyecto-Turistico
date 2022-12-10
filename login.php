@@ -20,6 +20,9 @@
 </head>
 <body>
     <div class="container">
+        <div class="logo">
+            <img src="./img/logo-guanajuato.png" alt="" class="Gtologo">
+        </div>
         <div>
             <h1 class="titulo">Inicio de Sesion </h1>
         </div>
