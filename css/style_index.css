@@ -1,0 +1,50 @@
+body{
+    margin: 0;
+}
+
+.navbar{
+    display: grid;
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 10px;
+    width: 10%;
+    height: 100%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 1;
+}
+
+.logo{
+    grid-row: 1 / 2;
+}
+
+.logo img{
+    border: 10px;
+    width: 95%;
+}
+
+.nav-btns{
+    grid-row: 2 / 4;
+    display: grid;
+    justify-content: center;
+}
+
+.nav-login a, .nav-btns a{
+    align-self: center;
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-login{
+    grid-row: 12 / 13;
+    display: flex;
+    justify-content: center;
+}
+
+.content{
+    margin: 3vh 3vh 3vh 12%;
+}
