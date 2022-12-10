@@ -1,0 +1,248 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Righteous', cursive;
+}
+
+.modal{
+    display: block;
+    width: 60%;
+    height: 80%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    z-index: 1;
+    position: fixed;
+    align-self: center;
+    top:10vh;
+    border-radius: 20px;
+}
+
+.modal-header{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    border-bottom: 1px solid #b9b9b9;
+    height: 10%;
+}
+
+.modal-header h2{
+    grid-column: 5 / 9;
+    text-align: center;
+}
+
+.modal-header button{
+    grid-column: 12;
+    font-size: 25px;
+    width: 25px;
+    height: 25px;
+    align-self: center;
+    justify-self: end;
+    margin-right: 22%;
+    background: none;
+    border: none;
+}
+.modal-header button:hover{
+    cursor: pointer;
+    color: lightgray;
+}
+
+.modal-content{
+    height: 90%;
+}
+.modal-content form{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    height: 90%;
+}
+
+.modal-footer{
+    height: 10%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    border-top: 1px solid #b9b9b9;
+}
+.modal-footer .btn-cerrar{
+    grid-column: 12;
+    width: 80%;
+    height: 50%;
+    font-size: medium;
+    font-weight: 700;
+    color: white;
+    align-self: center;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(182, 30, 30);
+}
+
+.btn-cerrar:hover{
+    cursor: pointer;
+    background-color: rgb(141, 26, 26);
+}
+
+.modal-footer .btn-guardar{
+    grid-column: 11;
+    width: 80%;
+    height: 50%;
+    font-size: medium;
+    font-weight: 700;
+    color: white;
+    align-self: center;
+    border-radius: 15px;
+    border: none;
+    background-color: green
+}
+
+.btn-guardar:hover{
+    cursor: pointer;
+    background-color: rgb(7, 107, 7);
+}
+
+.modal-content form input, .img-input-label{
+    grid-column: 2 / 12;
+    height: 70%;
+    align-self: center;
+}
+
+.img-input{
+    padding-top: 5px;
+    align-self: center;
+}
+.img-input-label{
+    display: flex;
+    grid-row: 2;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+.nombre-input{
+    grid-row: 3;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+.fecha-input{
+    grid-row: 4;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+.hora-input{
+    grid-row: 5;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+.ubicacion-input{
+    grid-row: 6;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+.costo-input{
+    grid-row: 7;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+.publico-input{
+    grid-row: 8;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+.disciplina-input{
+    grid-row: 9;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+.tipo-input{
+    grid-row: 10;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+
+.container{
+    font-family: 'Righteous', cursive;
+    margin: 2vh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 0px;
+    background-color: beige;
+}
+
+
+.tabla-titulo{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.tabla-titulo .texto{
+    grid-column: 4 / 10;
+    text-align: center;
+}
+
+.tabla-titulo .btn{
+    grid-column: 11 / 13;
+    margin-right: 10%;
+    justify-self: end;
+    align-self: center;
+}
+
+.add{
+    font-family: 'Righteous', cursive;
+    font-size: medium;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #2daa46;
+    color: white;
+}
+.add:hover{
+    cursor: pointer;
+    background-color: #238636;
+}
+
+.tabla{
+    grid-column: 2 / 12;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+tbody{
+    width: 100%;
+    align-self: center;
+}
+
+tr{
+    border-bottom: 2px solid lightgray;
+}
+
+td{
+    width: 11.1%;
+    text-align: center;
+}
+/*
+tr:last-child{
+    border-bottom: none;
+}
+
+/*12.5%*/
+
+.img{
+    width: 100%;
+    height: auto;
+}
+.info{
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    background: none;
+}
+.info:hover{
+    cursor: pointer;
+    color: gray;
+}
