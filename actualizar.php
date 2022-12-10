@@ -1,10 +1,10 @@
 <?php
-    //include("conexion.php");
-    //$conexion = conectar();
-    //$id = $_GET['CUT'];
-    //$sql = "SELECT * FROM usuario WHERE id='$CUT'";
-    //$query = mysqli_query($conn, $sql);
-    //$Nombre = mysqli_fetch_array($query);
+    include("conexion.php");
+    $conexion = conectar();
+    $id = $_GET['CUT'];
+    $sql = "SELECT * FROM usuario WHERE id='$CUT'";
+    $query = mysqli_query($conn, $sql);
+    $Nombre = mysqli_fetch_array($query);
 ?>
 
 <!DOCTYPE html>
