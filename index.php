@@ -72,7 +72,15 @@ Este organismo no será competente para conocer de quejas que se originen con mo
         <a href="#">boton 2</a>
         <a href="#">boton 3</a>
         <a href="#">boton 4</a>
+        <h2>
+        <a href="#" title="link to this post"></a>
+        <label for="start">
+        <font  color="#0000">Seleccionar dia</font>
+        </label>
+        <input type="date" id="start" name="trip-start" value="2018-07-22"min="2022-11-25" max="2024-12-31">
+        </h2>
     </div>
+    
     <div class="nav-login">
         <a href="/login.php">Login</a>
     </div>
@@ -94,21 +102,7 @@ La Ley establecerá sistemas de impugnación y medios de defensa de los derechos
 La Ley determinará la organización, funcionamiento, competencia y procedimientos de un organismo estatal de protección de los derechos humanos, dotado de plena autonomía, que conocerá de quejas en contra de actos u omisiones de naturaleza administrativa provenientes de cualquier autoridad o servidor público de carácter estatal o municipal que violen estos derechos, formulará acuerdos o recomendaciones públicas, no vinculatorias, denuncias y quejas ante las autoridades respectivas.
 Este organismo no será competente para conocer de quejas que se originen con motivo de acuerdos o decisiones de instancias electorales, ni tratándose de resoluciones de naturaleza jurisdiccional; pero podrá conocer de asuntos de orden administrativo de los órganos de impartición de justicia que transgredan derechos humanos.</font>
 </font></p> 
-<div class="fechas">
-        <div class="article">
-            <h2>
-                <a href="#" title="link to this post"></a>
-                <label for="start">
-                <font  color="#0000">Seleccionar dia</font>
-                </label>
-                <input type="date" id="start" name="trip-start"
-               value="2018-07-22"
-                min="2022-11-25" max="2024-12-31">
-            </h2>
 
-
-</div>
-</div>
 
 
 </div>
