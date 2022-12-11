@@ -2,7 +2,7 @@
     include("conexion.php");
     $conexion = conectar();
     $id = $_GET['CUT'];
-    $sql = "SELECT * FROM usuario WHERE id='$CUT'";
+    $sql = "SELECT * FROM usuario WHERE id='$id'";
     $query = mysqli_query($conn, $sql);
     $Nombre = mysqli_fetch_array($query);
 ?>
