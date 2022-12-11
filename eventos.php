@@ -29,21 +29,21 @@
             <button type="button" onclick="getElementById('modal-insert').style.display = 'none'"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div class="modal-content">
-            <form action="">
+            <form method="POST" action="insertar_evento.php" enctype="multipart/form-data">
                 <label for="img-input" class="img-input-label">
-                    <input type="file" id="img-input" class="img-input" accept="image/png, image/jpg, image/jpeg">
+                    <input type="file" name="img" id="img-input" class="img-input" accept="image/png, image/jpg, image/jpeg" required>
                 </label>
-                <input type="text" class="nombre-input" placeholder="Nombre del evento">
-                <input type="date" class="fecha-input" placeholder="Fecha del evento">
-                <input type="time" class="hora-input" placeholder="Hora del evento">
-                <input type="text" class="ubicacion-input" placeholder="Ubicacion del evento">
-                <input type="text" class="costo-input" placeholder="Costo del evento">
-                <input type="text" class="publico-input" placeholder="Publico">
-                <input type="text" class="disciplina-input" placeholder="Disciplina">
-                <input type="text" class="tipo-input" placeholder="Tipo de evento">
-
+                <input type="text" name="nombre" class="nombre-input" placeholder="Nombre del evento" required>
+                <input type="date" name="fecha" class="fecha-input" placeholder="Fecha del evento" required>
+                <input type="time" name="hora" class="hora-input" placeholder="Hora del evento" required>
+                <input type="text" name="ubicacion" class="ubicacion-input" placeholder="Ubicacion del evento" required>
+                <input type="text" name="costo" class="costo-input" placeholder="Costo del evento" required>
+                <input type="text" name="publico" class="publico-input" placeholder="Publico" required>
+                <input type="text" name="disciplina" class="disciplina-input" placeholder="Disciplina" required>
+                <input type="text" name="tipo" class="tipo-input" placeholder="Tipo de evento" required>
+                <button type="submit" class="btn-guardar" id="guardar" hidden>Guardar</button>
                 <div class="modal-footer">
-                    <button type="submit" class="btn-guardar">Guardar</button>
+                    <label for="guardar" class="btn-guardar">Guardar</label>
                     <button type="reset" class="btn-cerrar" onclick="getElementById('modal-insert').style.display = 'none'">Cerrar</button>
                 </div>
             </form>
@@ -76,7 +76,7 @@
                 <tbody class="tabla-r">
                     <?php while($row = mysqli_fetch_array($ejecutar)){?>
                         <tr>
-                            <td><?php echo '<img  class="img" src="data:imagen/jpeg;base64,'.base64_encode($row['imagen']).'"/>';?></td>
+                            <td><?php echo '<img  class="img" src="data:imagen/*;base64,'.base64_encode($row['imagen']).'"/>';?></td>
                             <td><?php echo $row['nombre']?></td>
                             <td><?php echo $row['fecha']?><br><?php echo $row['horario']?></td>
                             <td><?php echo $row['ubicacion']?></td>
