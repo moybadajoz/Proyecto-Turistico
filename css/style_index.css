@@ -1,5 +1,7 @@
 body{
     margin: 0;
+    padding: 0;
+    background-color: white;
 }
 
 .navbar{
@@ -15,10 +17,12 @@ body{
     left: 0;
     background-color: white;
     z-index: 1;
+    float: left;
 }
 
 .logo{
     grid-row: 1 / 2;
+    float: left;
 }
 
 .logo img{
@@ -48,3 +52,41 @@ body{
 .content{
     margin: 3vh 3vh 3vh 12%;
 }
+
+.header{
+    background-image: url("https://visitmexico.com/wp-content/uploads/2022/09/850A5101_2_3-Edit.png");
+    font-size: 90px;
+    text-align: center;
+     font-family: 'Noto Serif', serif;
+}
+.fechas{
+    margin-left: 12px;
+    float: left;
+    margin-right: 15px;
+}
+
+.filtros.boton{
+    position: static;
+    margin-right: 15px;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000;
+    background-color: burlywood;
+    border-radius: 6px;
+    border: 2px solid #000;
+  }
+  #filtros:after {
+    content: ""; 
+    display: block;
+    clear: both; 
+  }
+  .primero{
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-block: 5px;
+    width: 150px;
+    height: 100px;
+  }
