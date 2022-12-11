@@ -23,40 +23,11 @@
 </head>
 <body>
     
-    <div class="modal" id="modal-insert">
-        <div class="modal-header">
-            <h2>Nuevo Evento</h2>
-            <button type="button" onclick="getElementById('modal-insert').style.display = 'none'"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-        <div class="modal-content">
-            <form method="POST" action="insertar_evento.php" enctype="multipart/form-data">
-                <label for="img-input" class="img-input-label">
-                    <input type="file" name="img" id="img-input" class="img-input" accept="image/png, image/jpg, image/jpeg" required>
-                </label>
-                <input type="text" name="nombre" class="nombre-input" placeholder="Nombre del evento" required>
-                <input type="date" name="fecha" class="fecha-input" placeholder="Fecha del evento" required>
-                <input type="time" name="hora" class="hora-input" placeholder="Hora del evento" required>
-                <input type="text" name="ubicacion" class="ubicacion-input" placeholder="Ubicacion del evento" required>
-                <input type="text" name="costo" class="costo-input" placeholder="Costo del evento" required>
-                <input type="text" name="publico" class="publico-input" placeholder="Publico" required>
-                <input type="text" name="disciplina" class="disciplina-input" placeholder="Disciplina" required>
-                <input type="text" name="tipo" class="tipo-input" placeholder="Tipo de evento" required>
-                <button type="submit" class="btn-guardar" id="guardar" hidden>Guardar</button>
-                <div class="modal-footer">
-                    <label for="guardar" class="btn-guardar">Guardar</label>
-                    <button type="reset" class="btn-cerrar" onclick="getElementById('modal-insert').style.display = 'none'">Cerrar</button>
-                </div>
-            </form>
-        </div>
-    </div>
     <div class="container">
         <div class="tabla">
             <div class="tabla-titulo">
                 <div class="texto">
                     <h1>Eventos Registrados</h1>
-                </div>
-                <div class="btn">
-                    <button type="button" class="add" onclick="getElementById('modal-insert').style.display = 'block'"><i class="fa-solid fa-calendar-days"></i> Nuevo</button>
                 </div>
             </div>
             <table>
@@ -74,6 +45,11 @@
                     </tr>
                 </thead>
                 <tbody class="tabla-r">
+                    <tr>
+                        <td colspan="9">
+                            <button type="button" class="add"></button>
+                        </td>
+                    </tr>
                     <?php while($row = mysqli_fetch_array($ejecutar)){?>
                         <tr>
                             <td><?php echo '<img  class="img" src="data:imagen/*;base64,'.base64_encode($row['imagen']).'"/>';?></td>
