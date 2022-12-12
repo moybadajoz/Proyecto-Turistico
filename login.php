@@ -1,8 +1,31 @@
 <?php
     include("conexion.php");
     $conn = conectar();
-    $sql = "SELECT * FROM usuario";
-    $ejecutar = mysqli_query($conn, $sql);
+
+    if(isset($_POST['login'])){
+
+        session_start();
+    
+        $usuario_login = $_POST['Correo'];
+        $contrasena_login = $_POST['pass'];
+    
+        //verificar que existe el usuario
+    
+        $sql = "SELECT * from usuario WHERE Correo='$usuario_login'";
+        $query = mysqli_query($conn, $sql);
+        $usr = mysqli_fetch_array($query);
+        
+        if(!$usr){
+            echo '<script>alert("El usuario no existe")</script>';
+        }else{
+            if(password_verify($contrasena_login, $usr['pass'])){
+                $_SESSION['admin'] = $usuario_login;
+                header('location: index.php');
+            }else{
+                echo '<script>alert("Contraseña incorrecta")</script>';
+            }
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,51 +47,17 @@
             <img src="./img/logo-guanajuato.png" alt="" class="Gtologo">
         </div>
         <div>
-            <h1 class="titulo">Inicio de Sesion </h1>
+            <h1 class="titulo">Inicio de Sesion</h1>
         </div>
         <div>
             <div>
-                <form class="login" action="insertar.php" method="post">
-                    <input type="text" name="Nombre" placeholder="Ingresa tu nombre completo" class="form">
+                <form class="login" method="POST">
                     <input type="email" name="Correo" placeholder="Ingresa tu correo" class="form">
                     <input type="password" name="pass" placeholder="Ingresa tu contraseña" class="form">
-                    <input type="submit" value="Guardar" class="btn">
+                    <button type="submit" class="btn" name="login">Login</button>
                 </form>
             </div>
         </div>
-<div class ="col-md-8">
-    <div class="row">
-        <h3 class="text-center">Usuarios del sistema </h3>
-    </div>
-    <table class= "table">
-        <thead class="table-success table-striped">
-            <tr>
-                <th >Nombre</th>
-                <th>Correo</th>
-        <tbody>
-            <?php
-            while($item=mysqli_fetch_array($ejecutar)){
-        ?>
-        <tr>
-            <td><?php echo $item['id'] ?></td>
-            <td><?php echo $item['Nombre'] ?></td>
-            <td><?php echo $item['Correo'] ?></td>
-            <td>
-                <a href="actualizar.php?id=<?php echo $item['CUT'] ?>"
-                   class="btn btn-warning" >Editar</a>
-                 <a class="btn btn-primary" href="borrar.php?id=<?php echo $item['CUT'] ?>" class="btn btn-danger">Borrar</a>
-      </div>
-    </div>
-    </div>
-    </div>
-            </td>
-        </tr>
-        <?php
-            }
-            ?>
-        </tbody>
-    </table>
-    </div>
     </div>
 </body>
 </html>

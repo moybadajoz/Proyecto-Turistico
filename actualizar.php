@@ -1,8 +1,8 @@
 <?php
     include("conexion.php");
-    $conexion = conectar();
-    $id = $_GET['CUT'];
-    $sql = "SELECT * FROM usuario WHERE id='$id'";
+    $conn = conectar();
+    $id = $_GET['id'];
+    $sql = "SELECT * FROM usuario WHERE CUT='$id'";
     $query = mysqli_query($conn, $sql);
     $Nombre = mysqli_fetch_array($query);
 ?>
@@ -19,13 +19,16 @@
 <body>
     <div class="container">
         <div class="titulo">Datos del Alumno</div>
-        <div class="inputs">
-                <input type="hidden" name="id" value="<?php echo $Nombre['CUT']?>">
-                <input type="text" name="Nombre" class="form" placeholder="Nombre" style="" value="<?php echo $Nombre['Nombre']?>"> 
-                <input type="email" name="Correo" class="form"  placeholder="Correo" value="<?php echo $nombre['Correo']?>">
-                <input type="password" name="pass" class="form" placeholder="Contraseña" value="<?php echo $nombre['pass']?>"> 
-                <input type="submit" value="Actualizar" class="btn" >
-        </div>
+        
+        <form action="update.php" method="POST">
+            <div class="inputs">
+                    <input type="hidden" name="id" value="<?php echo $Nombre['CUT']?>">
+                    <input type="correo" name="Nombre" class="form" placeholder="Nombre" style="" value="<?php echo $Nombre['Nombre']?>"> 
+                    <input type="email" name="Correo" class="form"  placeholder="Correo" value="<?php echo $Nombre['Correo']?>">
+                    <input type="password" name="pass" class="form" placeholder="Contraseña" value="<?php echo $Nombre['pass']?>"> 
+                    <button type="submit" class="btn"> Actualizar</button>
+            </div>
+        </form>
     </div>    
 </body>
 </html>

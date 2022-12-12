@@ -23,6 +23,13 @@ body{
     text-align: center;
 }
 
+.logout{
+    grid-column: 12;
+    width: 100%;
+    height: 30px;
+    align-self: center;
+}
+
 .tabla-titulo .btn{
     grid-column: 11 / 13;
     margin-right: 10%;

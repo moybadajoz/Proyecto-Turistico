@@ -1,8 +1,16 @@
 <?php
+    session_start();
+    if(!isset($_SESSION['admin'])){
+        header('location: login.php');
+    }
     include("conexion.php");
     $conn = conectar();
     $sql = "SELECT * FROM evento";
     $ejecutar = mysqli_query($conn, $sql);
+    if(isset($_POST['logout'])){
+        session_destroy();
+        header('location: login.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +37,9 @@
                 <div class="texto">
                     <h1>Eventos Registrados</h1>
                 </div>
+                <form method="post" class="logout">
+                    <button class="logout" type="submit" name="logout">Logout</button>
+                </form>
             </div>
             <table>
                 <thead class="tabla-h">
@@ -83,7 +94,7 @@
 
                         </tr>
                         <tr id="edit-<?php echo $row['id']?>" style="display: none;" >
-                            <form method="POST" action="update.php" enctype="multipart/form-data">
+                            <form method="POST" action="update_evento.php" enctype="multipart/form-data">
                                 <input type="text" name="id" value="<?php echo $row['id']?>" hidden>
                                 <td><label for="<?php echo $row['id']?>" class="img-input-label" id="img-label">
                                         <input type="file" name="img" id="<?php echo $row['id'] ?>" class="img-input" accept="image/png, image/jpg, image/jpeg" onchange="onFileSelected(event)">
