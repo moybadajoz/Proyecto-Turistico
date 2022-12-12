@@ -1,6 +1,6 @@
 <?php
     function conectar(){
-        $host = "localhost:3307";
+        $host = "localhost:8889";
         $user = "root";
         $pass = "root";
         $bd = "turismo";

@@ -2,6 +2,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: rgb(236, 236, 236);
 }
 
 .container{
@@ -9,7 +10,6 @@ body{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 0px;
-    background-color: beige;
 }
 
 
@@ -32,10 +32,13 @@ body{
 
 .add{
    width: 100%;
-   height: 100px;
+   height: 80px;
+   margin-top: 5px;
+   margin-bottom: 5px;
    background: none;
-   border: 2px solid black;
+   border: 1px solid black;
    border-radius: 10px;
+   font-size: large;
 }
 
 .add:hover{
@@ -43,6 +46,39 @@ body{
     background-color: lightgray;
 }
 
+input{
+    width: 90%;
+    height: 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.img-input-label{
+    width: 50px;
+}
+.img-in:hover, .img:hover{
+    background: rgba(0, 0, 0, 0.144);
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.144);
+}
+.img-in{
+    border: 2px solid black;
+    border-radius: 10px;
+    display: block;
+}
+.img-input{
+    display: none;
+}
+.file-input{
+    font-size: 15px;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.fecha-input, .hora-input{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 .tabla{
     grid-column: 2 / 12;
 }
@@ -84,6 +120,10 @@ tr:last-child{
     height: 30px;
     font-size: 20px;
     background: none;
+}
+
+.info-a{
+    color:black;
 }
 .info:hover{
     cursor: pointer;
