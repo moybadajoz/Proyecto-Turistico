@@ -7,6 +7,10 @@
     $conn = conectar();
     $sql = "SELECT * FROM usuario";
     $ejecutar = mysqli_query($conn, $sql);
+    if(isset($_POST['logout'])){
+        session_destroy();
+        header('location: login.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,9 +31,16 @@
         <div class="logo">
             <img src="./img/logo-guanajuato.png" alt="" class="Gtologo">
         </div>
+        <form class="btn-r" action="eventos.php">
+            <button href="/registrar.php" type="submit" class="btn-r">Eventos</button>
+        </form>
+        <form method="post" class="logout">
+            <button class="logout" type="submit" name="logout">Logout</button>
+        </form>
         <div>
             <h1 class="titulo">Registro de Usuarios</h1>
         </div>
+        
         <div>
             <div>
                 <form class="login" action="insertar.php" method="post">
@@ -63,7 +74,7 @@
             <td><?php echo $item['Correo'] ?></td>
             <td>
                 <a href="actualizar.php?id=<?php echo $item['CUT'] ?>"
-                   class="btn btn-warning" >Editar</a>
+                   class="btn btn-warning" >Cambiar contraseña</a>
                  <a class="btn btn-primary" href="borrar.php?id=<?php echo $item['CUT'] ?>" class="btn btn-danger">Borrar</a>
       </div>
     </div>

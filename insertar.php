@@ -6,7 +6,6 @@ try {
     $Correo = $_POST['Correo'];
     $pass = $_POST['pass'];
     $pass2 = $_POST['pass2'];
-    echo $pass . "<br>" . $pass2;
 
     $pass = password_hash($pass, PASSWORD_DEFAULT);
 

@@ -1,10 +1,12 @@
 <?php
-/*
+
     include("conexion.php");
     $conn = conectar();
     $sql = "SELECT * FROM  evento ";
-    $ejecutar = mysqli_query($conn, $sql);
-    */
+    $query = mysqli_query($conn, $sql);
+
+    $response = json_decode(file_get_contents("http://api.weatherapi.com/v1/forecast.json?key=1c578acddf924c9c90c150158221012&q=Guanajuato&days=7&aqi=no&alerts=no"));
+    $forecast = $response->forecast->forecastday;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,26 +26,6 @@
     <div class="logo">
         <img src="./img/logo-guanajuato.png" alt="">
     </div>
-    <div class="botones">
-      <a class="text" href="#"><font color=#00000>PUBLICO</font></a>
-    </div>
-    <div class="botones">
-      <a href="#" class="text"><font color=#00000>DISCIPLINA</font></a>
-    </div>
-    <div class="botones">
-      <a href="#" class="text"><font color=#00000>TIPO DE EVENTO</font></a>
-    </div>
-    <div class="botones">
-      <a href="" class="text"><font color=#00000>UBICACION</font></a>
-    </div>
-    <div class="dia">
-        <h2>
-        <label for="start">
-        <font  color="#00000">FECHA</font>
-        </label>
-        <input type="date" id="start" name="trip-start" value="2018-07-22"min="2022-11-25" max="2024-12-31">
-        </h2>
-    </div>
   </div>
 
   <div class="content">
@@ -57,66 +39,31 @@
     </div>
   
   <div class="container-card">
-    <div class="card">
-      <figure>
-        <img src="./img/GtoMomias02.jpg">
-      </figure>
-      <div class="contenido-card">
-        <h3>Panteon de Santa Paula</h3>
-        <p>Recorrido por el museo de las momias</p>
-        <a href="#">Información</a>
-      </div>
-    </div>
-    <div class="card">
-      <figure>
-        <img src="./img/obra1.jpg">
-      </figure>
-      <div class="contenido-card">
-        <h3>Homilética I</h3>
-        <p>Portal de tareas de Homilética I</p>
-        <a href="#">Acceder</a>
-      </div>
-    </div>
-    <div class="card">
-    <figure>
-      <img src="./img/obra2.jpg">
-    </figure>
-    <div class="contenido-card col-4">
-      <h3>Introducción al Antiguo Testamento</h3>
-      <p>Portal de tareas de Introducción al Antiguo Testamento</p>
-      <a href="#">Acceder</a>
-    </div>
-  </div>
-    <div class="card">
+    <div class="card card-info">
         <figure>
-          <img src="./img/obra6.jpg">
+            <?php foreach($forecast as $day){ ?>
+                <img class="clima-icon" src="<?php echo $day->day->condition->icon ?>" alt="">
+            <?php } ?>
         </figure>
-        <div class="contenido-card">
-          <h3>Evangelios</h3>
-          <p>Portal de tareas de Evangelios</p>
-          <a href="#">Acceder</a>
+        <?php foreach($forecast as $day){ ?>
+            <h2 class="clima-info"><?php echo $day->date ."<br>". $day->day->avgtemp_c."°C"?></h2> 
+        <?php } ?>
+    </div>
+    <?php while( $card = mysqli_fetch_array($query)){?>
+      <div class="card">
+        <figure>
+          <img src="./img/db/<?php echo $card['imagen'] ?>">
+        </figure>
+        <div class="contenido-card col-4">
+          <h2> <?php echo $card['nombre'] ?> </h2>
+          <h5> <?php echo $card['ubicacion'] ?><br>
+               <?php echo $card['fecha'] . " / " . $card['horario'] ?> <br>
+               $<?php echo $card['costo'] ?><br>
+               <?php echo $card['publico'] .' / '.$card['disciplina'] .' / '.$card['tipo_evento']?></h5>
+               <a href="#">Mas Información</a>
         </div>
       </div>
-    <div class="card">
-      <figure>
-        <img src="./img/obra4.jpg">
-      </figure>
-      <div class="contenido-card">
-        <h3>Homilética I</h3>
-        <p>Portal de tareas de Homilética I</p>
-        <a href="#">Acceder</a>
-      </div>
-    </div>
-    <div class="card">
-      <figure>
-        <img src="./img/obra5.jpg">
-      </figure>
-      <div class="contenido-card col-4">
-        <h3>Introducción al Antiguo Testamento</h3>
-        <p>Portal de tareas de Introducción al Antiguo Testamento</p>
-        <a href="#">Acceder</a>
-      </div>
-    </div>
+    <?php } ?>
   </div>
 
 
