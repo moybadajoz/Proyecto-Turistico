@@ -37,6 +37,9 @@
                 <div class="texto">
                     <h1>Eventos Registrados</h1>
                 </div>
+                <form class="btn-r" action="registrar.php">
+                    <button href="/registrar.php" type="submit" class="btn-r">Registrar</button>
+                </form>
                 <form method="post" class="logout">
                     <button class="logout" type="submit" name="logout">Logout</button>
                 </form>

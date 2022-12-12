@@ -1,4 +1,8 @@
 <?php
+    session_start();
+    if(isset($_SESSION['admin'])){
+        header('location: eventos.php');
+    }
     include("conexion.php");
     $conn = conectar();
 
@@ -20,7 +24,7 @@
         }else{
             if(password_verify($contrasena_login, $usr['pass'])){
                 $_SESSION['admin'] = $usuario_login;
-                header('location: index.php');
+                header('location: eventos.php');
             }else{
                 echo '<script>alert("Contraseña incorrecta")</script>';
             }

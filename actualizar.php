@@ -18,14 +18,15 @@
 </head>
 <body>
     <div class="container">
-        <div class="titulo">Datos del Alumno</div>
+        <div class="titulo">Cambiar Contraseña</div>
         
         <form action="update.php" method="POST">
             <div class="inputs">
                     <input type="hidden" name="id" value="<?php echo $Nombre['CUT']?>">
-                    <input type="correo" name="Nombre" class="form" placeholder="Nombre" style="" value="<?php echo $Nombre['Nombre']?>"> 
-                    <input type="email" name="Correo" class="form"  placeholder="Correo" value="<?php echo $Nombre['Correo']?>">
-                    <input type="password" name="pass" class="form" placeholder="Contraseña" value="<?php echo $Nombre['pass']?>"> 
+                    <input type="correo" name="Nombre" class="form" placeholder="Nombre" style="" value="<?php echo $Nombre['Nombre']?>" disabled> 
+                    <input type="email" name="Correo" class="form"  placeholder="Correo" value="<?php echo $Nombre['Correo']?>" disabled>
+                    <input type="password" name="pass" class="form" placeholder="Contraseña" value=""> 
+                    <input type="password" name="pass2" class="form" placeholder="Contraseña" value="">
                     <button type="submit" class="btn"> Actualizar</button>
             </div>
         </form>
