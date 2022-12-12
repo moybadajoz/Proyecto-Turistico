@@ -20,7 +20,7 @@
         }else{
             if(password_verify($contrasena_login, $usr['pass'])){
                 $_SESSION['admin'] = $usuario_login;
-                header('location: index.php');
+                header('location: eventos.php');
             }else{
                 echo '<script>alert("Contraseña incorrecta")</script>';
             }
