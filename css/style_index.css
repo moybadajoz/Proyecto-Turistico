@@ -43,9 +43,6 @@ body{
       align-items: center;
       font-size: 40px;
     }
-    .facebook a{
-      text-decoration: none;
-    }
       .facebook:hover{
         background-color: #0165E1;
         color: white;
