@@ -80,3 +80,11 @@ body{
     height: 30px;
     align-self: center;
 }
+.btn-i{
+    position: absolute;
+    right: 10%;
+    top: 18%;
+    width: 80px;
+    height: 30px;
+    align-self: center;
+}

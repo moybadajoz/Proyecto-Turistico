@@ -21,6 +21,64 @@ body{
     float: left;
 }
 
+.social-media{
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.fa-brands fa-square-facebook{
+  text-align: center;
+  text-decoration: none;
+}
+    .facebook{
+      height: 100px;
+      width: 100%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      font-size: 40px;
+    }
+    .facebook a{
+      text-decoration: none;
+    }
+      .facebook:hover{
+        background-color: #0165E1;
+        color: white;
+      }
+    .instagram{
+      height: 100px;
+      width: 100%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      font-size: 40px;
+    }
+      .instagram:hover{
+        background-color: violet;
+        color: white;
+      }
+    .twitter{
+      height: 100px;
+      width: 100%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      font-size: 40px;
+    }
+      .twitter:hover{
+        background-color: skyblue;
+        color: white;
+      }
+
 .logo{
     grid-row: 1 / 2;
     float: left;

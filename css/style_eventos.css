@@ -35,9 +35,15 @@ body{
     height: 30px;
     align-self: center;
 }
+.btn-i{
+    grid-column: 13;
+    width: 98%;
+    height: 30px;
+    align-self: center;
+}
 
 .tabla-titulo .btn{
-    grid-column: 11 / 13;
+    grid-column: 11 / 14;
     margin-right: 10%;
     justify-self: end;
     align-self: center;

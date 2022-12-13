@@ -43,6 +43,9 @@
                 <form method="post" class="logout">
                     <button class="logout" type="submit" name="logout">Logout</button>
                 </form>
+                <form class="btn-i" action="index.php">
+                    <button href="/index.php" type="submit" class="btn-i">Inicio</button>
+                </form>
             </div>
             <table>
                 <thead class="tabla-h">

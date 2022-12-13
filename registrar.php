@@ -31,6 +31,9 @@
         <div class="logo">
             <img src="./img/logo-guanajuato.png" alt="" class="Gtologo">
         </div>
+        <form class="btn-i" action="index.php">
+            <button href="/index.php" type="submit" class="btn-i">Inicio</button>
+        </form>
         <form class="btn-r" action="eventos.php">
             <button href="/registrar.php" type="submit" class="btn-r">Eventos</button>
         </form>

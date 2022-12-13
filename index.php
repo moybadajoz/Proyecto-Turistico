@@ -26,6 +26,17 @@
     <div class="logo">
         <img src="./img/logo-guanajuato.png" alt="">
     </div>
+    <div class="social-media">
+      <div class="facebook" onclick="location.href='https://www.facebook.com/gobiernogto/';">
+        <i class="fa-brands fa-square-facebook"></i>
+      </div>
+      <div class="instagram" onclick="location.href='https://www.instagram.com/gobiernogto';">
+      <i class="fa-brands fa-instagram"></i>
+      </div>
+      <div class="twitter" onclick="location.href='https://twitter.com/gobiernogto';">
+      <i class="fa-brands fa-twitter"></i>
+      </div>
+    </div>
   </div>
 
   <div class="content">
